@@ -1,0 +1,60 @@
+.. _label-docs:
+
+Documentation
+*************
+
+In summary: The software has three main files ...
+
+ * core.py
+ * functions.py
+ * params.py.
+
+The core.py is the main file, which includes the information of the params.py and functions.py. To run the software, the user need to run the core.py file
+The functions.py is a library of functions called from the core.py.
+The params.py is the file containing the paths to the input data as well as other needed variables. That's the only file that the user needs to change.
+
+The input data are given by the user in the params.py file.
+The output data are:
+
+* XXXX.py: A file with the name of the best combination is returned. Its contenten is: x1 y1 dx2 dy2 peakCorr meanAbsCorr SNratio magn angle val_magn val_angle pts_filtered
+
+* table_results_postfilt.txt: A table with the number of discared points (in percent) from the different post-filters.
+
+* IDMatch_parameters.txt: A table that copies the parameters set by the user in the params.py file.
+
+* velocity_report.pdf: A report displaying the velocity field from the best combination found (best match) and summarizes the results obtained from all iterations.
+
+
+.. _label-params:
+
+Input parameters
+================
+
+Here put detailed information about the parameters and what they mean.
+
+
+.. _label-functions:
+
+Functions in IDMatch
+====================
+
+There are several functions used in IDMatch and they were built in a way that each step of the workflow (see details in :ref:`label-core`) represents one function.
+For instance, one function is about image filtering, another one for image matching and another one for displaying the results.
+Only in one case (the matching function) needs to call another one, mainly for the purpose of readability.
+
+In the following, the functions a listed together with their purpose, inputs and outputs.
+
+.. automodule:: test_docstring
+    :members:
+
+
+.. _label-core:
+
+The core file
+=============
+
+The core file is the main file collecting the information from the parameters and the functions.
+
+It calls the functions one after the other, starting with:
+
+Here describe the workflow used.
