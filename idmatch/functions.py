@@ -465,7 +465,7 @@ def import_dsm(dsm1, dsm2, res_input, res_plots, gl_extent, val_pts_option):
 
     # Resize the above DSMs and hillshade that will be used for plotting in a later function
     print("Exporting hillshades in lower resolution for plotting")
-    resizing = 2 # to 2m resolution
+    resizing = 2  # to 2m resolution
     gdalwarp_H1 = ''.join(('gdalwarp -overwrite -tr ', str(resizing), ' ', str(resizing), ' ', '-te', ' ', str(intersection[0]), ' ', str(intersection[3]), ' ',str(intersection[2]), ' ', str(intersection[1]), ' ', '-r cubic', ' ', res_input + '\\H1.tif', ' ', res_plots + '\\H1_resize.tif'))
     os.system(gdalwarp_H1)
     gdalwarp_H2 = ''.join(('gdalwarp -overwrite -tr ', str(resizing), ' ', str(resizing), ' ', '-te', ' ', str(intersection[0]), ' ', str(intersection[3]), ' ',str(intersection[2]), ' ', str(intersection[1]), ' ', '-r cubic', ' ', res_input + '\\H2.tif', ' ', res_plots + '\\H2_resize.tif'))
