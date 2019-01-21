@@ -10,33 +10,18 @@ from skimage import data, exposure, io, filters
 from skimage.color import rgb2gray, rgba2rgb
 import cv2
 import datetime
-import time
 from scipy.signal import fftconvolve
 from scipy.interpolate import griddata
 import shutil
-import reportlab
-from reportlab.pdfgen import canvas
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
 import itertools
-from matplotlib.backends.backend_pdf import PdfPages
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from matplotlib.lines import Line2D
-from matplotlib.colors import Normalize
 import matplotlib.image as mpimg
-from itertools import product, starmap
-import pandas as pd
-from skimage.feature import match_template
-from scipy.interpolate import griddata
-import random
 import scipy
 from PIL import Image, ImageDraw
-from scipy import signal, ndimage, spatial
-from skimage.viewer import ImageViewer
+from scipy import ndimage
 from pylab import *
-from scipy.ndimage import measurements
-from scipy.spatial import distance
 
 
 def check_userinputs(mode, image1, image2, dsm1, dsm2, image_filter_list, digitsm_filter_list, hillshade_filter_list, pix_dev, step_grid, nbr_win, method_list, times_stepgrid, min_win_members, val_pts_option, result_path, gl_extent):
@@ -2674,7 +2659,7 @@ def display_results(res_postfilt, res_plots, table_mean_results, data_info, tabl
 
     ## --- Plot number of combinations per point p
     print("plot 4")
-    fig_nbr_members_meanstd = res_plots + '\\fig_nbr_combi_perpoint.tif'
+    fig_nbr_members_meanstd = res_plots + '\\fig_nbr_combi_perpoint.jpeg'
     fig, ax = plt.subplots()
     plt.scatter(x1, y1, c=nbr_members, s=5)
     plt.jet()
